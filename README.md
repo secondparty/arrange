@@ -95,7 +95,22 @@ This is a full row (because `six` plus `five` plus the offset-by-`one` makes twe
 
 ## Responsiveness
 
-*Arrange* doesn't try to handle responsiveness out-of-the-box; it only handles laying out columns into a flexible grid. That is by design. Grid columns can be made responsive through media queries, but that all must be done manually, as it isn't something that can be properly guessed out-of-the-box.
+*Arrange* doesn't try to handle responsiveness out-of-the-box; it only handles laying out columns into a flexible grid. That is by design. Grid columns can be made responsive through media queries, but that all must be done manually as it isn't something that can be properly guessed out-of-the-box, like so:
+
+```css
+/* switch to one-column at 40em */
+@media screen and (max-width: 40em) {
+   .column {
+      float: none;
+      width: auto;
+      margin: 1.5em 0 0;
+   }
+   
+   .column:first-child {
+      margin-top: 0;
+   }
+}
+```
 
 Use break points that make sense to your project and adjust from there.
 
