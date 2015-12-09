@@ -20,10 +20,10 @@ In its most basic for, *Arrange* will work something like this:
 
 ```html
 <div class="row">
-    <div class="four columns">
+    <div class="four column">
         <!-- this would be a 1/3-width column -->
     </div>
-    <div class="eight columns">
+    <div class="eight column">
         <!-- this would be a 2/3-width column -->
     </div>
 </div>
@@ -32,17 +32,14 @@ In its most basic for, *Arrange* will work something like this:
 What's happening here:
 
 - An element with the class `row` wraps the columns you wish to set up, this element is responsible for clearing your columns (which are floated) so that as content in the columns expand, the row expands with it
-- Child elements with the class `columns` and the number of columns to span are included within, each column element is being floated left
+- Child elements with the class `column` and the number of columns to span are included within, each column element is being floated left
 
 The important thing to note is that the number of columns used add up to twelve.
 
 ## Class Aliases
 
-There are a couple of aliases in place to let you use the words that make sense to you.
+Rather than specifying the number of columns to span, you can also use the width that you're trying to accomplish with the following helpers:
 
-- You can use the class `row` or `container` for the element holding columns
-- You can use the class `columns` or `column` for the elements that are spanning columns
-- Rather than specifying the number of columns to span, you can also use the width that you're trying to accomplish with the following helpers:
    - `one` can be `twelfth` or `one-twelfth`
    - `two` can be `sixth` or `one-sixth`
    - `three` can be `quarter` or `fourth` or `one-quarter` or `one-fourth`
@@ -60,22 +57,22 @@ Grids can be nested. That might look something like this:
 
 ```html
 <div class="row">
-    <div class="four columns">
+    <div class="four column">
         <!-- this would be a 1/3-width column -->
     </div>
-    <div class="eight columns row">
+    <div class="eight column row">
         <!-- this would be a 2/3-width column that can hold its own columns -->
-        <div class="six columns">
+        <div class="six column">
             <!-- this would be 1/2-width of the 2/3-width column -->
         </div>
-        <div class="six columns">
+        <div class="six column">
             <!-- this would also be 1/2-width of the 2/3-width column -->
         </div>
     </div>
 </div>
 ```
 
-> **Note:** the column in the first set of columns that will be holding sub-columns also has a the `row` class applied to it. This will enable that column to expand to the sub-columns that it holds.
+> **Note:** the column in the first set of columns that will be holding sub-columns also has the `row` class applied to it. This will enable that column to expand to the sub-columns that it holds.
 
 
 ## Offsets
@@ -84,10 +81,10 @@ If you want to leave some white space between columns, you'll use the `offset` c
 
 ```html
 <div class="row">
-    <div class="six columns">
+    <div class="six column">
         <!-- this would be a 1/2-width column -->
     </div>
-    <div class="five columns offset-by-one">
+    <div class="five column offset-by-one">
         <!-- this would be a 5/12-width column pushed over a 1/12-width column -->
     </div>
 </div>
@@ -111,10 +108,10 @@ This would work like this:
 
 ```html
 <div class="reverse row">
-    <div class="four columns">
+    <div class="four column">
         <!-- this would be a 1/3-width column -->
     </div>
-    <div class="eight columns">
+    <div class="eight column">
         <!-- this would be a 2/3-width column -->
     </div>
 </div>
@@ -162,14 +159,14 @@ Sometimes you'll need to break out of the twelve-column system, and *Arrange* gi
 
 ## Collapsed Grids
 
-*Arrange* also comes with all of the features listed above in a format that doesn't use gutters. To remove the gutters from any grid, simply add the `collapsed` class to the container element (the element with a class of either `row` or `container`). Like this:
+*Arrange* also comes with all of the features listed above in a format that doesn't use gutters. To remove the gutters from any grid, simply add the `collapsed` class to the containing element (the element with the `row` class). Like this:
 
 ```html
 <div class="row collapsed">
-    <div class="four columns">
+    <div class="four column">
         <!-- this would be a 1/3-width column -->
     </div>
-    <div class="eight columns">
+    <div class="eight column">
         <!-- this would be a 2/3-width column -->
     </div>
 </div>
